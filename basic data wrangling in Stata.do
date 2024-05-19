@@ -5,7 +5,10 @@
 clear all
 cd "/Users/manuellopez/Documents/GitHub/M1 Workshop/Data/M1 - Chile" // this command sets a repository in your local computer
 
-import delimited "https://raw.githubusercontent.com/Manulobu/M1-Workshop---Data-Wrangling-for-Spatial-Econometrics/main/Data/M1%20-%20Chile/663b57d93119d000cf238462_results.csv", clear
+// import delimited "https://raw.githubusercontent.com/Manulobu/M1-Workshop---Data-Wrangling-for-Spatial-Econometrics/main/Data/M1%20-%20Chile/663b57d93119d000cf238462_results.csv", clear // This command could be used to directly fetch the dataset from its GitHub URL
+
+import delimited "663b57d93119d000cf238462_results.csv"
+
 
 d // provides a description of the dataset
 
@@ -114,8 +117,8 @@ sum
 * Saving long format *
 **********************
 
-save "/Users/manuellopez/Documents/GitHub/M1-Workshop---Data-Wrangling-for-Spatial-Econometrics/Data/M1 - Chile/cl long ntl 2012 - 2020", replace // creates a .dta database in the local GitHub repository
-export delimited "/Users/manuellopez/Documents/GitHub/M1-Workshop---Data-Wrangling-for-Spatial-Econometrics/Data/M1 - Chile/cl long ntl 2012 - 2020", replace  // creates a .dta database in the local GitHub repository
+save "cl long ntl 2012 - 2020", replace // creates a .dta database in the local GitHub repository
+export delimited "cl long ntl 2012 - 2020", replace  // creates a .dta database in the local GitHub repository
 
 ****************
 * Long to wide *
@@ -126,5 +129,5 @@ reshape wide ntl, i(adm3) j(year)
 // Basic summary statistics wide format
 sum
 
-save "/Users/manuellopez/Documents/GitHub/M1-Workshop---Data-Wrangling-for-Spatial-Econometrics/Data/M1 - Chile/cl wide ntl 2012 - 2020", replace
-export delimited "/Users/manuellopez/Documents/GitHub/M1-Workshop---Data-Wrangling-for-Spatial-Econometrics/Data/M1 - Chile/cl wide ntl 2012 - 2020", replace
+save "cl wide ntl 2012 - 2020", replace
+export delimited "cl wide ntl 2012 - 2020", replace
